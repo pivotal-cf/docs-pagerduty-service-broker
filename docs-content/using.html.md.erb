@@ -5,11 +5,35 @@ owner: Partners
 
 This topic describes how to use PagerDuty Service Broker for PCF.
 
-##<a id='using'></a> Using PagerDuty Service Broker for PCF
+##<a id='using'></a> Create and Bind a Service Instance with cf CLI
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+1. Log in to your deployment and target the **org** and **space** where you installed PagerDuty Service Broker for PCF.
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+    ```
+    cf login
+    cf target -o <ORG> -s <SPACE>
+    ```
+
+1. List the marketplace services and locate the PagerDuty service.
+
+    ```
+    cf marketplace
+    ```
+
+1. Create an instance of the PagerDuty service, being sure to replace `<SERVICE_NAME>` with your preferred service name.
+
+    ```
+    cf create-service p-pagerduty standard <SERVICE_NAME>
+    ```
+
+1. Bind the PagerDuty service instance to an application, being sure to replace `<APP_NAME>` with your application’s name and `<SERVICE_NAME>` with your service’s name.
+
+    ```
+    cf bind-service <APP_NAME> <SERVICE_NAME>
+    ```
+
+1. Restage the application for the service binding to take effect, being sure to replace `<APP_NAME>` with your application’s name.
+
+    ```
+    cf restage <APP_NAME>
+    ```
