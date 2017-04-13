@@ -3,42 +3,37 @@ title: Using PagerDuty Service Broker for PCF
 owner: Partners
 ---
 
-This topic describes how to use PagerDuty Service Broker for PCF.
+This topic describes how to use PagerDuty Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Create and Bind a Service Instance with cf CLI
+##<a id='using'></a> Create and Bind a Service Instance with the cf CLI
 
-1. Log in to your deployment.
+1. Log in to your deployment and target the org and space where you installed PagerDuty Service Broker for PCF.
+    <pre class="terminal">
+    $ cf login
+    $ cf target -o YOUR-ORG -s YOUR-SPACE
+    </pre>
 
-    ```
-    cf login
-    ```
+1. List the marketplace services and locate the PagerDuty service shown as `p-pagerduty`.
+    <pre class="terminal">
+    $ cf marketplace
+    </pre>
 
-1. List the marketplace services and locate the PagerDuty service.
+1. Create an instance of the PagerDuty service, replacing `SERVICE-NAME` with your preferred service instance name.
+    <pre class="terminal">
+    $ cf create-service p-pagerduty standard SERVICE-NAME
+    </pre>
 
-    ```
-    cf marketplace
-    ```
+1. Bind the PagerDuty service instance to an app, replacing `APP-NAME` with your app name and `SERVICE-NAME` with your service instance name.
+    <pre class="terminal">
+    $ cf bind-service APP-NAME SERVICE-NAME
+    </pre>
 
-1. Create an instance of the PagerDuty service, being sure to replace `<SERVICE_NAME>` with your preferred service name.
+1. Restage the app for the service binding to take effect, replacing `APP-NAME` with your app name.
+    <pre class="terminal">
+    $ cf restage APP-NAME
+    </pre>
 
-    ```
-    cf create-service p-pagerduty standard <SERVICE_NAME>
-    ```
-
-1. Bind the PagerDuty service instance to an application, being sure to replace `<APP_NAME>` with your application’s name and `<SERVICE_NAME>` with your service’s name.
-
-    ```
-    cf bind-service <APP_NAME> <SERVICE_NAME>
-    ```
-
-1. Restage the application for the service binding to take effect, being sure to replace `<APP_NAME>` with your application’s name.
-
-    ```
-    cf restage <APP_NAME>
-    ```
-
-1. The application's `VCAP_SERVICES` environment variables will now contain links to documentation that allows you to connect the app to PagerDuty. The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/).
-
-    ```
-    cf env <APP_NAME>
-    ```
+1. The `VCAP_SERVICES` environment variable of your app now contains links to documentation to help you to connect the app to PagerDuty. The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/).
+    <pre class="terminal">
+    $ cf env APP-NAME
+    </pre>

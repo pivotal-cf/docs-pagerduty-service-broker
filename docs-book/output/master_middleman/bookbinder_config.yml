@@ -5,9 +5,9 @@
 :subnav_templates:
   pagerduty-service-broker: pagerduty-service-broker_subnav
 :template_variables: 
-:local_repo_dir: "/Users/lucas/Projects/docs-pagerduty-service-broker"
+:local_repo_dir: "/Users/ljarzynski/workspace/docs-pagerduty-service-broker"
 :workspace: !ruby/object:Pathname
-  path: "/Users/lucas/Projects/docs-pagerduty-service-broker/docs-book/output/master_middleman/source"
+  path: "/Users/ljarzynski/workspace/docs-pagerduty-service-broker/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
