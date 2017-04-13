@@ -32,3 +32,8 @@ This topic describes how to use PagerDuty Service Broker for Pivotal Cloud Found
     <pre class="terminal">
     $ cf restage APP-NAME
     </pre>
+
+1. The `VCAP_SERVICES` environment variable of your app now contains links to documentation to help you to connect the app to PagerDuty. The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/).
+    <pre class="terminal">
+    $ cf env APP-NAME
+    </pre>
