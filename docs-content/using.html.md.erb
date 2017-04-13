@@ -7,11 +7,10 @@ This topic describes how to use PagerDuty Service Broker for PCF.
 
 ##<a id='using'></a> Create and Bind a Service Instance with cf CLI
 
-1. Log in to your deployment and target the **org** and **space** where you installed PagerDuty Service Broker for PCF.
+1. Log in to your deployment.
 
     ```
     cf login
-    cf target -o <ORG> -s <SPACE>
     ```
 
 1. List the marketplace services and locate the PagerDuty service.
@@ -36,4 +35,10 @@ This topic describes how to use PagerDuty Service Broker for PCF.
 
     ```
     cf restage <APP_NAME>
+    ```
+
+1. The application's `VCAP_SERVICES` environment variables will now contain links to documentation that allows you to connect the app to PagerDuty. The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/).
+
+    ```
+    cf env <APP_NAME>
     ```
