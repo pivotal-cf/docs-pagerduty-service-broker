@@ -37,16 +37,3 @@ This topic describes how to use PagerDuty Service Broker for Pivotal Cloud Found
     <pre class="terminal">
     $ cf env APP-NAME
     </pre>
-
-##<a id='team-provisioning'></a> Team Provisioning
-
-When adding the PagerDuty service to your Pivotal app, it will automatically provision a PagerDuty team utilizing the Space Name and your Org Name of your Pivotal environment. Additionally, when adding your application to your Pivotal app, it will create a PagerDuty Escalation Policy and Service for that new team.
-
-##<a id='user-provisioning'></a> User Provisioning
-
-User Provisioning can be accomplished in two ways: 
-
-* Using existing users already members of your Pivotal space 
-* Manually entering users 
-
-If the user does not have an existing account in PagerDuty and they are added during the Pivotal user provisioning process, the user will consume a PagerDuty license.
