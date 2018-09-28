@@ -1,5 +1,5 @@
 ---
-title: PagerDuty Service Broker for PCF (Beta)
+title: PagerDuty Service Broker for PCF
 owner: Partners
 ---
 <style>
@@ -13,8 +13,6 @@ owner: Partners
      }
 </style>
 
-<p class="note warning"><strong>WARNING:</strong> PagerDuty Service Broker for Pivotal Cloud Foundry (PCF) tile is currently in beta and is intended for evaluation and test purposes only. Do not use this product in a PCF production environment.</p>
-
 This documentation describes PagerDuty Service Broker for Pivotal Cloud Foundry (PCF). PagerDuty Service Broker for PCF enables developers to integrate their PCF apps with PagerDuty's incident management platform.
 
 
@@ -22,16 +20,18 @@ This documentation describes PagerDuty Service Broker for Pivotal Cloud Foundry 
 
 PagerDuty Service Broker for PCF registers a service broker with PCF and exposes its service plans on the Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI) and bind them to their apps. This lets developers manage incidents with their PCF apps using PagerDuty.
 
-For more information, see [Using PagerDuty Service Broker for PCF](./using.html).
-
 
 ## <a id='features'></a> Key Features
 
 PagerDuty Service Broker for PCF includes the following key features:
 
-* The ability to manage PCF app incidents with PagerDuty's incident management platform
-* Documentation to integrate popular PCF services with PagerDuty
-
+* The ability to manage PCF app incidents with PagerDuty’s incident management platform
+* PagerDuty Team Provisioning - Provisions a PagerDuty team based on the Pivotal Org and Space name of the Pivotal service or App that is being bound to
+* PagerDuty User Provisioning 
+* Multiple Pivotal users can be uploaded during the binding process (via JSON file)
+* Pivotal Users can also be automatically created based on the Pivotal Org Space's team members 
+* PagerDuty Service Provisioning - Users automatically have a service created to enable easy connectivity to any monitoring tools
+* PagerDuty Escalation Policy Provisioning - users automatically have an Escalation Policy that has a simple escalation process  based on the Pivotal users provisioned during the User and Team provisioning step
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -43,15 +43,15 @@ The following table provides version and version-support information about Pager
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v0.0.2</td>
+        <td>v1.1.2</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>May 10, 2017</td>
+        <td>October 1, 2018</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>PagerDuty Service Broker for PCF v0.0.2</td>
+        <td>PagerDuty Service Broker for PCF v1.1.2</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
@@ -78,4 +78,4 @@ PagerDuty Service Broker for PCF has the following requirements:
 
 ## <a id="feedback"></a> Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [support@pagerduty.com](mailto:support@pagerduty.com).
+Please provide any bugs, feature requests, or questions to [support@pagerduty.com](mailto:support@pagerduty.com).
