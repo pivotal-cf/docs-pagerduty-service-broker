@@ -42,31 +42,33 @@ This topic describes how to use PagerDuty Service Broker for Pivotal Cloud Found
 
 ## <a id='ops_manager_settings'></a> Ops Manager Settings
 
-The following features are available when logging into Ops Manager and assumes you’ve already downloaded and installed the tile into your environment. 
+The following features are available when logging into Ops Manager and assumes you have already downloaded and installed the tile into your environment. 
 
 ### PagerDuty API Key and Integration User
 
 In order for the Pivotal tile to access the integration, you will need to provide an API integration key as well as user credentials.
 
-1. Navigate to the the tile
+1. Navigate to the tile.
 
-1. Click the settings tab
+1. Click the settings tab.
 
-1. Go into the PagerDuty integration step and enter your API key. To obtain an integration API key, follow directions in the link [here](https://support.pagerduty.com/docs/using-the-api).
+1. Go into the PagerDuty integration step and enter your API key.
+   To obtain an integration API key, follow directions in the link [here](https://support.pagerduty.com/docs/using-the-api).
 
-1. Go to the Integration user step and enter your user credentials. You will need to enter a global admin’s user credentials
+1. Go to the Integration user step and enter your user credentials.
+    You will need to enter a global admin’s user credentials.
 
-### Other global integration features
+### Other Global Integration Features
 
 There are additional options to customize how the integration provisions. Click to the *Defaults and customizations*. Below are a set of options and brief description of what it does. 
 
-**Prefix for a team name** - When adding a prefix for this field, the integration will add this prefix to the org and space name to the team name that gets provisioned into PagerDuty
+**Prefix for a team name** - When adding a prefix for this field, the integration will add this prefix to the org and space name to the team name that gets provisioned into PagerDuty.
 
 **Automatically provision Space users** - When this box is checked, when you create add the PagerDuty service to your app, it will automatically provision users within that space. 
 
-**Docs Link** - This allows you to customize the document that is linked within the tile. By default, this navigates back to PagerDuty’s user document
+**Docs Link** - This allows you to customize the document that is linked within the tile. By default, this navigates back to PagerDuty’s user document.
 
-**Provision single PagerDuty team for Organization** - When this box is checked, it will automatically provision a team in PagerDuty when an org is created 
+**Provision single PagerDuty team for Organization** - When this box is checked, it will automatically provision a team in PagerDuty when an org is created.
 
 ## <a id='apps_manager_settings'></a> Apps Manager Settings
 
@@ -105,24 +107,24 @@ You can provision users utilizing existing members of your Pivotal space. The ro
 
 To enable this user provisioning method:
 
-1. Navigate to your app
-1. Create a new Service
-1. Select PagerDuty
-1. Select the default plan 
-1. Click on ‘Enter JSON’
-1. Enter the following: `{“provision_space_users”:true}`
-1. Click create
+1. Navigate to your app.
+1. Create a new Service.
+1. Select PagerDuty.
+1. Select the default plan.
+1. Click on ‘Enter JSON’.
+1. Enter the following: `{“provision_space_users”:true}`.
+1. Click create.
 
 ![User Provision](../using_create_service.png)
 
-### Manually entering users
+### Manually Entering Users
 
 You can also manually enter users within a JSON file to provision multiple users. The required fields are: email, name, and role. 
 
-1. Create a new Service
-1. Select PagerDuty
-1. Select the default plan 
-1. Click on ‘Enter JSON’
+1. Create a new Service.
+1. Select PagerDuty.
+1. Select the default plan.
+1. Click on ‘Enter JSON’.
 1. Enter the following: 
 ```
 	{
