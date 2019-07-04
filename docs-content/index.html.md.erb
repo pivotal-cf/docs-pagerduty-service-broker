@@ -9,14 +9,15 @@ PagerDuty Service Broker for PCF enables developers to integrate their PCF apps 
 
 ## <a id='overview'></a> Overview
 
-PagerDuty Service Broker for PCF registers a service broker with PCF and exposes its service plans on the Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI) and bind them to their apps. This lets developers manage incidents with their PCF apps using PagerDuty.
+PagerDuty Service Broker for PCF registers a service broker with PCF and exposes its service plans on the Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI) and bind them to their apps. This integration enables provisioning for PagerDuty teams, users, services, and escalation policies.
+
 
 
 ## <a id='features'></a> Key Features
 
 PagerDuty Service Broker for PCF includes the following key features:
 
-* The ability to manage PCF app incidents with PagerDuty’s incident management platform
+* The ability to manage PagerDuty teams, users, services, and escalation policies.
 * PagerDuty Team Provisioning - Provisions a PagerDuty team based on the Pivotal Org and Space name of the Pivotal service or App that is being bound to
 * PagerDuty User Provisioning 
 * Multiple Pivotal users can be uploaded during the binding process (via JSON file)
@@ -34,15 +35,15 @@ The following table provides version and version-support information about Pager
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v1.2.0</td>
+        <td>v1.2.4</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>April 23, 2019</td>
+        <td>July 4, 2019</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>PagerDuty Service Broker for PCF v1.2.0</td>
+        <td>PagerDuty Service Broker for PCF v1.2.4</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
@@ -61,13 +62,12 @@ The following table provides version and version-support information about Pager
         <td>AWS, Azure</td>
     </tr>
 </table>
+
 <p class="note warning"><strong> WARNING:</strong>
 PagerDuty Service Broker for PCF v1.1.2
 and earlier require a Ubuntu Trusty stemcell.
 The end-of-life date for Ubuntu Trusty is April 2019.
 If a security vulnerability is found on this stemcell after April, it will not be fixed.</p>
-
-
 
 ## <a id="reqs"></a> Requirements
 
