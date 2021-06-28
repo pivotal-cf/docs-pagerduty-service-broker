@@ -35,7 +35,7 @@ This topic describes how to use PagerDuty Service Broker for VMware Tanzu.
     </pre>
 
 1. The `VCAP_SERVICES` environment variable of your app now contains links to documentation to help you to connect the app to PagerDuty.
-   The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/).
+   The documentation is also available directly on the [PagerDuty website](https://www.pagerduty.com/integrations/pivotal-cloud-foundry/).
     <pre class="terminal">
     $ cf env APP-NAME
     </pre>
@@ -44,7 +44,7 @@ This topic describes how to use PagerDuty Service Broker for VMware Tanzu.
 ## <a id='ops_manager_settings'></a> Ops Manager Settings
 
 The following features are available when logging into Ops Manager and
-assumes you have already downloaded and installed the tile into your environment. 
+assumes you have already downloaded and installed the tile into your environment.
 
 ###<a id="api"></a> PagerDuty API Key and Integration User
 
@@ -57,6 +57,8 @@ In order for the Pivotal tile to access the integration, you will need to provid
 1. Go into the PagerDuty integration step and enter your API key.
    To obtain an integration API key, follow directions in the link [here](https://support.pagerduty.com/docs/using-the-api).
 
+1. Choose the PagerDuty REST API endpoint depending on the region, namely, change the default option for the EU-based PagerDuty account.
+
 1. Go to the Integration user step and enter your user credentials.
     You will need to enter a global admin’s user credentials.
 
@@ -64,13 +66,13 @@ In order for the Pivotal tile to access the integration, you will need to provid
 
 There are additional options to customize how the integration provisions.
 Click **Defaults and customizations**.
-Below are a set of options and brief description of what it does. 
+Below are a set of options and a brief description of what it does.
 
 **Prefix for a team name** - When adding a prefix for this field, the integration will add this prefix to the org
   and space name to the team name that gets provisioned into PagerDuty.
 
-**Automatically provision Space users** - When this box is checked, when you create add the PagerDuty service to your app,
-  it will automatically provision users within that space. 
+**Automatically provision Space users** - When this box is checked, when you bind the PagerDuty service to your app,
+  it will automatically provision users within that space.
 
 **Docs Link** - This allows you to customize the document that is linked within the tile. By default, this navigates back to PagerDuty’s user document.
 
@@ -84,19 +86,19 @@ The following features are available when logging into Apps Manager.
 
 When adding the PagerDuty service to your Pivotal app,
 it will automatically provision a PagerDuty team using the space name and your org name of your Pivotal environment.
-Additionally, when adding your application to your Pivotal app, it will create a PagerDuty escalation policy and service for that new team. 
+Additionally, when adding your application to your Pivotal app, it will create a PagerDuty escalation policy and service for that new team.
 
 ###<a id="user-provision"></a> User Provision
 
-User provisioning can be accomplished in two ways: 
+User provisioning can be accomplished in two ways:
 
-* Using existing users already members of your Pivotal space 
-* Manually entering users 
+* Using existing users already members of your Pivotal space
+* Manually entering users
 
 If the user does not have an existing account in PagerDuty and they are added during the Pivotal user provisioning process,
 the user will consume a PagerDuty license.
 
-###<a id="existing-users"></a> Using Existing Users Already Members of Your Pivotal Space 
+###<a id="existing-users"></a> Using Existing Users Already Members of Your Pivotal Space
 
 You can provision users using existing members of your Pivotal space.
 The roles are currently mapped as follows:
@@ -130,20 +132,20 @@ To enable this user provisioning method:
 ###<a id="manual-enter"></a> Manually Entering Users
 
 You can also manually enter users within a JSON file to provision multiple users.
-The required fields are: email, name, and role. 
+The required fields are: email, name, and role.
 
 1. Create a new service.
 1. Select PagerDuty.
 1. Select the default plan.
 1. Click **Enter JSON**.
-1. Enter the following: 
+1. Enter the following:
 ```
-	{
-		“users”: [{
-			“email”: “john@test.com” , 
-			“name”: “John Doe”, 
-			“role”: “team_responder”
-		}]
+    {
+        “users”: [{
+            “email”: “john@test.com” ,
+            “name”: “John Doe”,
+            “role”: “team_responder”
+        }]
     }
 ```
 
