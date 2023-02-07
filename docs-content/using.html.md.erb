@@ -52,7 +52,7 @@ In order for the Pivotal tile to access the integration, you will need to provid
 
 1. Navigate to the tile.
 
-1. Click the settings tab.
+1. Click the **Settings** tab.
 
 1. Go into the PagerDuty integration step and enter your API key.
    To obtain an integration API key, follow directions in the link [here](https://support.pagerduty.com/docs/using-the-api).
@@ -127,7 +127,7 @@ To enable this user provisioning method:
 1. Enter the following: `{“provision_space_users”:true}`.
 1. Click **CREATE**.
 
-    ![User Provision](../using_create_service.png)
+    ![alt-text="User Provision"](./using_create_service.png)
 
 ###<a id="manual-enter"></a> Manually Entering Users
 
@@ -139,16 +139,17 @@ The required fields are: email, name, and role.
 1. Select the default plan.
 1. Click **Enter JSON**.
 1. Enter the following:
-```
+
+    ```
     {
-        “users”: [{
-            “email”: “john@test.com” ,
-            “name”: “John Doe”,
-            “role”: “team_responder”
+        "users": [{
+            "email": "john@test.com" ,
+            "name": "John Doe",
+            "role": "team_responder"
         }]
     }
-```
+    ```
 
-    Where email is the user’s email, the name is the user’s name, and the role is a PagerDuty role. 
+    Where 'email' is the user’s email, 'name' is the user’s name, and 'role' is a PagerDuty role.
 
-    ![Manually entering users](../using_create_service_manual.png)
+    ![alt-text="Manually entering users"](./using_create_service_manual.png)
